@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rosarium Hodie</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink: #e9e2d6;
+      --muted: rgba(233,226,214,.65);
+      --rule: rgba(233,226,214,.18);
+      --accent: #c8ad78;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background: transparent;
+      color: var(--ink);
+      font-family: "EB Garamond", Georgia, serif;
+    }
+
+    .wrap{ width:100%; margin:0; padding: 6px 0; }
+
+    .frame{
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 12px 14px 14px 14px;
+      background: transparent;
+    }
+
+    .header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 10px;
+    }
+
+    .title{
+      font-family: "IM Fell English SC","EB Garamond",serif;
+      letter-spacing:.06em;
+      font-size: 15px;
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      margin:0;
+    }
+
+    .title .cross{
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .meta{
+      display:flex;
+      gap: 8px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .pill{
+      border:1px solid rgba(233,226,214,.14);
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: transparent;
+    }
+
+    .body{ padding: 6px 0 0 0; }
+
+    .kicker{
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing:.02em;
+      font-size: 14px;
+      margin: 0 0 6px 0;
+    }
+
+    .mysteryLine{
+      display:flex;
+      align-items:baseline;
+      gap: 10px;
+      margin: 0 0 10px 0;
+      flex-wrap:wrap;
+    }
+
+    .mysteryIcon{
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .mysteryName{
+      font-size: 18px;
+      font-weight: 600;
+      color: rgba(233,226,214,.95);
+      margin:0;
+    }
+
+    .list{
+      margin: 0;
+      padding: 8px 0 4px 12px;
+      border-left: 2px solid var(--accent);
+      background: transparent;
+    }
+
+    .item{
+      margin: 0 0 6px 0;
+      font-size: 16px;
+      line-height: 1.35;
+      color: rgba(233,226,214,.92);
+    }
+
+    .footer{
+      margin-top: 8px;
+      padding-top: 6px;
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .status{
+      font-style: italic;
+      color: rgba(233,226,214,.55);
+    }
+
+    .skeleton{
+      color: rgba(233,226,214,.55);
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="frame" role="article" aria-label="Mistérios do Rosário do dia">
+      <div class="header">
+        <div class="title">
+          <span class="cross">✟</span>
+          Rosarium Hodie
+        </div>
+        <div class="meta">
+          <span class="pill" id="today">—</span>
+        </div>
+      </div>
+
+      <div class="body">
+        <p class="kicker">Mistérios do Dia</p>
+
+        <div class="mysteryLine">
+          <span class="mysteryIcon" id="icon">⟡</span>
+          <p class="mysteryName" id="name">Carregando…</p>
+        </div>
+
+        <div class="list" id="list">
+          <p class="item skeleton">Determinando o mistério conforme o dia da semana…</p>
+        </div>
+
+        <div class="footer">
+          <span>Rosário tradicional (3 conjuntos)</span>
+          <span class="status" id="status">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./main.js" defer></script>
+</body>
+</html>
